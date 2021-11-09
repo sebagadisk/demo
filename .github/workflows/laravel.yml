@@ -39,5 +39,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/demo # we move into our app's folder
+            cd /root/var/www/demo # we move into our app's folder
             git pull --ff-only # we pull any changes from git
