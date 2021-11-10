@@ -40,4 +40,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /var/www/html/demo # we move into our app's folder
-            git pull --ff-only # we pull any changes from git
+            git pull origin master --rebase # we pull any changes from git
