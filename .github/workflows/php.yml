@@ -11,9 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
+#      - name: Validate composer.json and composer.lock
+#        run: composer validate --strict
 
       - name: Cache Composer packages
         id: composer-cache
@@ -39,7 +38,7 @@ jobs:
     if: github.ref == 'refs/heads/php-app' # we tell Github to only execute this step if we're on our php-app branch (so we don't put unfinished branches in production)
     steps:
       - name: Deploying to Ubuntu Sever
-        uses: appleboy/ssh-action@php-app # An action made to control Linux servers
+        uses: appleboy/ssh-action@master # An action made to control Linux servers
         with: # We set all our secrets here for the action, these won't be shown in the action logs
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
