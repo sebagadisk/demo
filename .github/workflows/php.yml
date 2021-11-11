@@ -35,7 +35,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: laravel-tests # this job depends on "laravel-tests" having finished
+#    needs: laravel-tests # this job depends on "laravel-tests" having finished
     if: github.ref == 'refs/heads/php-app' # we tell Github to only execute this step if we're on our php-app branch (so we don't put unfinished branches in production)
     steps:
       - name: Deploying to Ubuntu Sever
