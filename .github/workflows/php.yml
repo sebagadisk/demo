@@ -23,8 +23,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
+#      - name: Install dependencies
+#        run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
@@ -45,5 +45,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /var/www/html/demo # we move into our app's folder
-            git pull origin master --rebase # we pull any changes from git
+            cd /var/www/html/demo2/demo # we move into our app's folder
+            git pull origin php-app --rebase # we pull any changes from git
